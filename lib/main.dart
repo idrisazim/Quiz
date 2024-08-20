@@ -6,7 +6,7 @@ void main() {
     MaterialApp(
       home: Scaffold(
         body: HomePage(Color.fromARGB(255, 21, 176, 4), 'VaciBuddy',
-            'assets/images/vaci.png'),
+            'assets/images/quizlogo.png'),
       ),
     ),
   );
