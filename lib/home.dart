@@ -32,7 +32,7 @@ class HomePage extends StatelessWidget {
                     )),
                 
                 label: const Text(
-                  'Sign in',
+                  'Lets find out!',
                   style: TextStyle(fontSize: 20),
                 ),
               ),

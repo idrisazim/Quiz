@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ogreniyorum/home.dart';
+import 'package:flutter_ogreniyorum/quiz.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      home: Scaffold(
-        body: HomePage(const Color.fromARGB(255, 21, 176, 4), 'VaciBuddy',
-            'assets/images/quizlogo.png'),
-      ),
-    ),
-  );
+  runApp(const Quiz());
 }
