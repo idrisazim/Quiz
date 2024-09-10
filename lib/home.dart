@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ogreniyorum/questions.dart';
 
 class HomePage extends StatelessWidget {
   HomePage(this.background, this.text, this.image, {super.key});
@@ -23,14 +24,18 @@ class HomePage extends StatelessWidget {
             Container(
               margin: const EdgeInsets.only(top: 15),
               child: OutlinedButton.icon(
-                onPressed: run,
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Questions()));
+                },
                 style: OutlinedButton.styleFrom(
                     foregroundColor: Colors.white,
                     overlayColor: Colors.white,
                     textStyle: const TextStyle(
                       fontSize: 11.0,
                     )),
-                
                 label: const Text(
                   'Lets find out!',
                   style: TextStyle(fontSize: 20),
