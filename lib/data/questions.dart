@@ -1,7 +1,7 @@
 import 'package:flutter_ogreniyorum/models/quiz_questions.dart';
 
 const questions = [
-  QuizQuestion('Who would I r*b one out if I had only one choice?', [
+  QuizQuestion('Who would I r*b one out to if I had only one choice?', [
     'Abdul',
     'Za ker',
     'Dayi',
