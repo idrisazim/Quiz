@@ -5,7 +5,7 @@ void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        body: HomePage(Color.fromARGB(255, 21, 176, 4), 'VaciBuddy',
+        body: HomePage(const Color.fromARGB(255, 21, 176, 4), 'VaciBuddy',
             'assets/images/quizlogo.png'),
       ),
     ),
