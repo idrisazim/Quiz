@@ -23,9 +23,6 @@ class _QuestionsState extends State<Questions> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ...currentQuestion.answers.map((answer) { // The 3 dot here converts to list to individual items
-                return AnswerButton(answer, (){});
-              }),
               Container(
                   margin: const EdgeInsets.only(
                       right: 30.0, left: 30.0, bottom: 10.0),
@@ -35,11 +32,10 @@ class _QuestionsState extends State<Questions> {
                         fontSize: 20.0,
                         decoration: TextDecoration.none,
                       ))),
-              const SizedBox(height: 30),
-              AnswerButton(currentQuestion.answers[0], () {}),
-              AnswerButton(currentQuestion.answers[1], () {}),
-              AnswerButton(currentQuestion.answers[2], () {}),
-              AnswerButton(currentQuestion.answers[3], () {}),
+              ...currentQuestion.answers.map((answer) {
+                // The 3 dot here converts to list to individual items
+                return AnswerButton(answer, () {});
+              }),
             ],
           ),
         ));
