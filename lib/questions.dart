@@ -22,16 +22,20 @@ class _QuestionsState extends State<Questions> {
           width: double.infinity,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            //crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Container(
                   margin: const EdgeInsets.only(
-                      right: 30.0, left: 30.0, bottom: 10.0),
-                  child: Text(currentQuestion.text,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                        decoration: TextDecoration.none,
-                      ))),
+                      right: 30.0, left: 30.0, bottom: 30.0),
+                  child: Text(
+                    currentQuestion.text,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                      decoration: TextDecoration.none,
+                    ),
+                    textAlign: TextAlign.center, // Centering the text
+                  )),
               ...currentQuestion.answers.map((answer) {
                 // The 3 dot here converts to list to individual items
                 return AnswerButton(answer, () {});
