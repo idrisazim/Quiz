@@ -77,7 +77,7 @@ void nextpage(BuildContext context) {
         context,
         MaterialPageRoute(
           builder: (context) => const EndScreen(
-            Colors.black,
+            Color.fromARGB(255, 21, 176, 4),
             'Ready to see your result?',
             'assets/images/ashraf.png',
           ),

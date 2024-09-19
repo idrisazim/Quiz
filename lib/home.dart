@@ -11,7 +11,6 @@ class HomePage extends StatelessWidget {
   final String image;
   final String text;
 
-  List<String> selectedAnswers = [];
 
   void chooseAnswer(String answer, BuildContext context) {
     selectedAnswers.add(answer);
@@ -19,7 +18,6 @@ class HomePage extends StatelessWidget {
   }
 
   void nextPage(BuildContext context) {
-    selectedAnswers = [];
     Navigator.push(
       context,
       MaterialPageRoute(
