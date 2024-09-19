@@ -1,15 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ogreniyorum/data/questions_list.dart';
 import 'package:flutter_ogreniyorum/questions.dart';
+import 'package:flutter_ogreniyorum/end.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   HomePage(this.background, this.text, this.image, {super.key});
-  var background;
-  var image;
-  String text;
+
+  final Color background;
+  final String image;
+  final String text;
+
+  List<String> selectedAnswers = [];
+
+  void chooseAnswer(String answer, BuildContext context) {
+    selectedAnswers.add(answer);
+
+    if (selectedAnswers.length == questions.length) {
+      nextPage(context); 
+    }
+  }
+  void nextPage(BuildContext context) {
+    selectedAnswers = [];
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) => EndScreen(
+                const Color.fromARGB(255, 21, 176, 4),
+                'Ready to see your result?',
+                'assets/images/ashraf.png',
+              )),
+    );
+  }
 
   @override
-  Widget build(context) {
+  Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(color: background),
       child: Center(
@@ -26,14 +51,14 @@ class HomePage extends StatelessWidget {
               margin: const EdgeInsets.only(top: 15),
               child: OutlinedButton.icon(
                 onPressed: () {
-                  // Provide the onSelectAnswer function when navigating
+                  // Navigate to the Questions screen and pass the onSelectAnswer callback
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => Questions(
                         onSelectAnswer: (String answer) {
-                          // Implement what you want to do with the selected answer
-                          print("Selected Answer: $answer");
+                          // Pass context and call chooseAnswer
+                          chooseAnswer(answer, context);
                         },
                       ),
                     ),
@@ -53,7 +78,6 @@ class HomePage extends StatelessWidget {
                     fontSize: 24,
                   ),
                 ),
-                icon: const Icon(Icons.quiz),
               ),
             ),
           ],

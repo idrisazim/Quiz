@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ogreniyorum/home.dart';
 
+
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
 
@@ -11,11 +12,6 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  final List<String> selectedAnswers = [];
-
-  void chooseAnswer(String answer) {
-    selectedAnswers.add(answer);
-  }
 
   @override
   Widget build(context) {
