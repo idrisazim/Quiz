@@ -3,6 +3,7 @@ import 'package:flutter_ogreniyorum/end.dart';
 import 'package:flutter_ogreniyorum/answer_button.dart';
 import 'package:flutter_ogreniyorum/data/questions_list.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_ogreniyorum/results_screen.dart';
 
 class Questions extends StatefulWidget {
   const Questions({super.key, required this.onSelectAnswer});
@@ -29,9 +30,9 @@ class _QuestionsState extends State<Questions> {
 
   @override
   Widget build(context) {
-    if (currentQuestionIndex == 5) {
+    if (currentQuestionIndex == 4) {
       setState(() {
-         nextpage(context);
+        nextpage(context); 
       });
     }
     final currentQuestion = questions[currentQuestionIndex];
@@ -72,14 +73,14 @@ class _QuestionsState extends State<Questions> {
 }
 
 void nextpage(BuildContext context) {
-     Future.microtask(() => Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const EndScreen(
-                Colors.black,
-                'Ready to see your result?',
-                'assets/images/ashraf.png',
-              ),
-            ),
-          ));
+  Future.microtask(() => Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const EndScreen(
+            Colors.black,
+            'Ready to see your result?',
+            'assets/images/ashraf.png',
+          ),
+        ),
+      ));
 }

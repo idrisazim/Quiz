@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ogreniyorum/data/questions_list.dart';
 import 'package:flutter_ogreniyorum/questions.dart';
 import 'package:flutter_ogreniyorum/end.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+List<String> selectedAnswers = [];  
 class HomePage extends StatelessWidget {
   HomePage(this.background, this.text, this.image, {super.key});
 
@@ -16,10 +16,8 @@ class HomePage extends StatelessWidget {
   void chooseAnswer(String answer, BuildContext context) {
     selectedAnswers.add(answer);
 
-    if (selectedAnswers.length == questions.length) {
-      nextPage(context); 
-    }
   }
+
   void nextPage(BuildContext context) {
     selectedAnswers = [];
     Navigator.push(
@@ -45,7 +43,7 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 10),
             Text(
               text,
-              style: const TextStyle(color: Colors.white, fontSize: 25.0),
+              style: const TextStyle(color: Colors.white, fontSize: 23.0, decoration: TextDecoration.none),
             ),
             Container(
               margin: const EdgeInsets.only(top: 15),
