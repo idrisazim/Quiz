@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_ogreniyorum/answer_button.dart';
 import 'package:flutter_ogreniyorum/data/questions_list.dart';
 
 class Questions extends StatefulWidget {
-  const Questions({super.key});
+  const Questions({super.key, required this.onSelectAnswer});
+
+  final void Function(String answer) onSelectAnswer;
 
   @override
   State<Questions> createState() {
@@ -14,10 +17,11 @@ class Questions extends StatefulWidget {
 class _QuestionsState extends State<Questions> {
   var currentQuestionIndex = 0;
 
-  void answerQuestion() {
+  void answerQuestion(String selectedAnswer) {
+    widget.onSelectAnswer(selectedAnswer);
     setState(() {
-    currentQuestionIndex++;
-    }); 
+      currentQuestionIndex++;
+    });
   }
 
   @override
@@ -46,7 +50,9 @@ class _QuestionsState extends State<Questions> {
                   )),
               ...currentQuestion.getShuffledAnswers().map((answer) {
                 // The 3 dot here converts to list to individual items
-                return AnswerButton(answer, answerQuestion);
+                return AnswerButton(answer, () {
+                  answerQuestion(answer);
+                });
               }),
             ],
           ),

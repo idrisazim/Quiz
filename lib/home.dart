@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ogreniyorum/questions.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   HomePage(this.background, this.text, this.image, {super.key});
@@ -25,23 +26,36 @@ class HomePage extends StatelessWidget {
               margin: const EdgeInsets.only(top: 15),
               child: OutlinedButton.icon(
                 onPressed: () {
+                  // Provide the onSelectAnswer function when navigating
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const Questions()));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Questions(
+                        onSelectAnswer: (String answer) {
+                          // Implement what you want to do with the selected answer
+                          print("Selected Answer: $answer");
+                        },
+                      ),
+                    ),
+                  );
                 },
                 style: OutlinedButton.styleFrom(
-                    foregroundColor: Colors.white,
-                    overlayColor: Colors.white,
-                    textStyle: const TextStyle(
-                      fontSize: 11.0,
-                    )),
-                label: const Text(
-                  'Lets find out!',
-                  style: TextStyle(fontSize: 20),
+                  foregroundColor: Colors.white,
+                  overlayColor: Colors.white,
+                  textStyle: const TextStyle(
+                    fontSize: 11.0,
+                  ),
                 ),
+                label: Text(
+                  'Let\'s find out!',
+                  style: GoogleFonts.robotoMono(
+                    color: Colors.white,
+                    fontSize: 24,
+                  ),
+                ),
+                icon: const Icon(Icons.quiz),
               ),
-            )
+            ),
           ],
         ),
       ),

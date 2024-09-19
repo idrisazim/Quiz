@@ -11,16 +11,22 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
+  final List<String> selectedAnswers = [];
+
+  void chooseAnswer(String answer) {
+    selectedAnswers.add(answer);
+  }
 
   @override
   Widget build(context) {
     return MaterialApp(
       home: Scaffold(
-        body: HomePage(const Color.fromARGB(255, 21, 176, 4),
-            'How well do you know IDI?', 'assets/images/quizlogo.png'),
+        body: HomePage(
+          const Color.fromARGB(255, 21, 176, 4),
+          'How well do you know IDI?',
+          'assets/images/quizlogo.png',
+        ),
       ),
     );
   }
 }
-
-
