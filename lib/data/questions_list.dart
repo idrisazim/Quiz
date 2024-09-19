@@ -30,6 +30,12 @@ const questions = [
     'Konya',
     'Drake',
     'Eminem'
+  ],),
+  QuizQuestion('Mayna', [
+    'Mayna',
+    'Badakhshai',
+    'Nan khirday',
+    'Pagayi'
   ],)
   
 ];

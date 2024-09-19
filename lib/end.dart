@@ -5,8 +5,7 @@ class EndScreen extends StatelessWidget {
   final String title;
   final String imagePath;
 
-  const EndScreen(this.backgroundColor, this.title, this.imagePath, {Key? key})
-      : super(key: key);
+  const EndScreen(this.backgroundColor, this.title, this.imagePath, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +19,11 @@ class EndScreen extends StatelessWidget {
           Text(
             title,
             style: const TextStyle(
-              fontSize: 24, // Adjust font size
+              fontSize: 20, // Adjust font size
               fontWeight: FontWeight.bold, // Font weight for bold effect
               color: Colors.white, // Text color
-              letterSpacing: 2.0, // Adds spacing between letters
+              letterSpacing: 2.0,
+              decoration: TextDecoration.none, // Adds spacing between letters
               shadows: [
                 Shadow(
                   offset: Offset(2.0, 2.0),

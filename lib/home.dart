@@ -25,8 +25,8 @@ class HomePage extends StatelessWidget {
     Navigator.push(
       context,
       MaterialPageRoute(
-          builder: (context) => EndScreen(
-                const Color.fromARGB(255, 21, 176, 4),
+          builder: (context) => const EndScreen(
+                Color.fromARGB(255, 21, 176, 4),
                 'Ready to see your result?',
                 'assets/images/ashraf.png',
               )),

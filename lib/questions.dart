@@ -29,8 +29,10 @@ class _QuestionsState extends State<Questions> {
 
   @override
   Widget build(context) {
-    if (currentQuestionIndex >= questions.length) {
-      nextpage(context);
+    if (currentQuestionIndex == 5) {
+      setState(() {
+         nextpage(context);
+      });
     }
     final currentQuestion = questions[currentQuestionIndex];
 
@@ -73,8 +75,8 @@ void nextpage(BuildContext context) {
      Future.microtask(() => Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => EndScreen(
-                const Color.fromARGB(255, 21, 176, 4),
+              builder: (context) => const EndScreen(
+                Colors.black,
                 'Ready to see your result?',
                 'assets/images/ashraf.png',
               ),
